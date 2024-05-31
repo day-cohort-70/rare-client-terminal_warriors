@@ -17,3 +17,12 @@ export const fetchTags = () => {
     return fetch('http://localhost:8000/tags')
     .then(response => response.json())
 }
+
+export const deleteTag = (tagId) => {
+  return fetch(`http://localhost:8000/tags/${tagId}`, {
+    method: "DELETE",
+    headers: {
+      "Accept": "application/json"
+    }
+  }).then(res => res.text())
+}
