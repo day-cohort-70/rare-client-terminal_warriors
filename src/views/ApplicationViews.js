@@ -1,9 +1,8 @@
-// src/views/ApplicationViews.js
-
-import { Route, Routes } from 'react-router-dom';
-import { Login } from '../components/auth/Login';
-import { Register } from '../components/auth/Register';
-import { Authorized } from './Authorized';
+import { Route, Routes } from "react-router-dom"
+import { Login } from "../components/auth/Login"
+import { Register } from "../components/auth/Register"
+import { Authorized } from "./Authorized"
+import { AllPosts } from "../components/posts/AllPosts"
 import { TagForm } from '../components/tags/TagForm';
 import { TagList } from '../components/tags/TagList.js';
 import { CategoryList } from '../components/categories/CategoryList.js';
@@ -16,12 +15,13 @@ export const ApplicationViews = ({ token, setToken }) => {
       <Route path="/login" element={<Login setToken={setToken} />} />
       <Route path="/register" element={<Register setToken={setToken} />} />
       <Route element={<Authorized token={token} />}>
-        {/* Add Routes here */}
+
         <Route path="/tags/create" element={<TagForm />} />
         <Route path='/tags' element={<TagList />} />
         <Route path='/categories' element={<CategoryList/>}/>
+        <Route path="/allposts" element={<AllPosts/>}/>
+
       </Route>
     </Routes>
   );
 };
-
