@@ -13,6 +13,7 @@ export const createTag = (tag) => {
       return response.text().then(text => text ? JSON.parse(text) : {});
     });
   };
+
 export const fetchTags = () => {
     return fetch('http://localhost:8000/tags')
     .then(response => response.json())

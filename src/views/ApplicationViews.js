@@ -5,18 +5,23 @@ import { Authorized } from "./Authorized"
 import { AllPosts } from "../components/posts/AllPosts"
 import { TagForm } from '../components/tags/TagForm';
 import { TagList } from '../components/tags/TagList.js';
+import { CategoryList } from '../components/categories/CategoryList.js';
+
 
 export const ApplicationViews = ({ token, setToken }) => {
+
   return (
     <Routes>
       <Route path="/login" element={<Login setToken={setToken} />} />
       <Route path="/register" element={<Register setToken={setToken} />} />
       <Route element={<Authorized token={token} />}>
-        <Route path="/allposts" element={<AllPosts/>}/>
+
         <Route path="/tags/create" element={<TagForm />} />
         <Route path='/tags' element={<TagList />} />
+        <Route path='/categories' element={<CategoryList/>}/>
+        <Route path="/allposts" element={<AllPosts/>}/>
+
       </Route>
     </Routes>
   );
 };
-
