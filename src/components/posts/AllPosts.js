@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { getAllPostsforAuthor } from "../../managers/PostsMangager"
 
-export const AllPosts = ({currentUser}) => {
-    const [posts, setPosts] = useState
+export const AllPosts = () => {
+    const [posts, setPosts] = useState([])
 
     const getAllPosts = () => {
         getAllPostsforAuthor().then((postArray) => {
@@ -11,7 +11,7 @@ export const AllPosts = ({currentUser}) => {
     }
     useEffect(() => {
         getAllPosts()
-    }, [currentUser])
+    }, [])
 
     return(
         <main>
@@ -27,7 +27,9 @@ export const AllPosts = ({currentUser}) => {
                         return (<>
                         <div className="cell">{postObj.title}</div>
                         <div className="cell">{postObj.author}</div>
-                        <div className="cell">{postObj.date}</div>
+                        <div className="cell">{postObj.publication_date}</div>
+                        <div className="cell">{postObj.category_name}</div>
+                        <div className="cell">{postObj.tags}</div>
                         </>)
                     })}
                 </div>
