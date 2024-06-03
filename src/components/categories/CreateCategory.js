@@ -37,7 +37,7 @@ export const CreateCategory = ({setCategories}) => {
                     />
                 </div>
                 <div className="field is-horizontal is-justify-content-center"> {/* Center the button */}
-                    <button className="button is-info has-text-black has-text-weight-bold is-size-5 mt-4">Create Category</button>
+                    <button className="button is-info has-text-weight-bold is-size-5 mt-4">Create Category</button>
                 </div>
             </form>
         </div>
