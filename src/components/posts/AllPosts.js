@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllPostsforAuthor } from "../../managers/PostsMangager"
+import { getAllPostsforAuthor } from "../../managers/PostsManager"
 
 export const AllPosts = () => {
     const [posts, setPosts] = useState([])

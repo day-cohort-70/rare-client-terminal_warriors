@@ -1,57 +1,64 @@
 // src/components/posts/CreatePosts.js
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPost } from "../../managers/PostsManager";
+import { listCategories } from "../../managers/CategoryManager";
 
 export const CreatePosts = () => {
     const [formData, setFormData] = useState({
         title: "",
         content: "",
-        category_id: 1, // Example category ID
+        category_id: "",
         image_url: "",
         publication_date: new Date().toISOString().split("T")[0]
     });
+    const [categories, setCategories] = useState([]);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
+    useEffect(() => {
+        listCategories().then(setCategories);
+    }, []);
+
+    const handleChange = ({ target: { name, value } }) => {
+        setFormData(prev => ({
+            ...prev,
             [name]: name === 'category_id' ? parseInt(value) : value
-        });
+        }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
-        const post = {
-            ...formData,
-            user_id: 1, // Example user ID
-            approved: true // Assuming posts are approved by default
-        };
-        createPost(post)
+        createPost({ ...formData, user_id: 1, approved: true })
             .then(() => console.log("Post created successfully"))
             .catch(error => console.error("Error creating post:", error));
     };
 
-    const formFields = [
-        { label: "Title", name: "title", type: "text" },
-        { label: "Content", name: "content", type: "textarea" },
-        { label: "Category ID", name: "category_id", type: "number" },
-        { label: "Image URL", name: "image_url", type: "text" },
-        { label: "Publication Date", name: "publication_date", type: "date" }
-    ];
-
     return (
         <form onSubmit={handleSubmit}>
             <h2>Create New Post</h2>
-            {formFields.map(({ label, name, type }) => (
+            {["title", "content", "image_url", "publication_date"].map(name => (
                 <div key={name}>
-                    <label>{label}:</label>
-                    {type === "textarea" ? (
+                    <label>{name.replace('_', ' ')}:</label>
+                    {name === "content" ? (
                         <textarea name={name} value={formData[name]} onChange={handleChange} required />
                     ) : (
-                        <input type={type} name={name} value={formData[name]} onChange={handleChange} required />
+                        <input
+                            type={name === "publication_date" ? "date" : "text"}
+                            name={name}
+                            value={formData[name]}
+                            onChange={handleChange}
+                            required
+                        />
                     )}
                 </div>
             ))}
+            <div>
+                <label>Category:</label>
+                <select name="category_id" value={formData.category_id} onChange={handleChange} required>
+                    <option value="">Select a category</option>
+                    {categories.map(({ id, label }) => (
+                        <option key={id} value={id}>{label}</option>
+                    ))}
+                </select>
+            </div>
             <button type="submit">Create Post</button>
         </form>
     );
