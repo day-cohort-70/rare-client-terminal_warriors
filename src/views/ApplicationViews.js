@@ -7,6 +7,7 @@ import { TagForm } from '../components/tags/TagForm';
 import { TagList } from '../components/tags/TagList.js';
 import { CategoryList } from '../components/categories/CategoryList.js';
 import { EditCategory } from "../components/categories/EditCategory.js"
+import { MyPosts } from "../components/posts/MyPosts.js"
 
 
 export const ApplicationViews = ({ token, setToken }) => {
@@ -24,6 +25,7 @@ export const ApplicationViews = ({ token, setToken }) => {
           <Route path=":categoryId" element={<EditCategory/>}/>
         </Route>
         <Route path="/allposts" element={<AllPosts/>}/>
+        <Route path="/myposts" element={<MyPosts token={token}/>}/>
 
       </Route>
     </Routes>
