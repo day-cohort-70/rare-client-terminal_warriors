@@ -1,6 +1,6 @@
 The `formData` state variable in the frontend holds all the data needed to create a new post. When the form is submitted, the data from `formData` is sent to the backend using the `createPost` function. This function makes a POST request to the backend, which then processes the data and adds the new post to the database.
 
-Here’s a step-by-step breakdown of how this works with your existing backend logic:
+Here’s a step-by-step breakdown of how this interacts with our existing backend logic:
 
 ### Frontend: `CreatePosts.js`
 
