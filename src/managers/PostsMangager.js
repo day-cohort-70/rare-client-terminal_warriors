@@ -4,6 +4,6 @@ export const getAllPostsforAuthor = () => {
 }
 
 export const getAllMyPosts = (id) => {
-    return fetch(`http://localhost:8000/posts?authorId=${id}`).then((res)=>
+    return fetch(`http://localhost:8000/posts?user_id=${id}`).then((res)=>
     res.json())
 }
