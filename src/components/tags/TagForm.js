@@ -1,25 +1,31 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { createTag } from '../../managers/TagManager';
+// src/components/tags/TagForm.js
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { createTag, retrieveTag, updateTag } from '../../managers/TagManager';
 
 export const TagForm = () => {
   const [label, setLabel] = useState('');
   const navigate = useNavigate();
+  const { tagId } = useParams();
+
+  useEffect(() => {
+    if (tagId) {
+      retrieveTag(tagId).then(tag => setLabel(tag.label));
+    }
+  }, [tagId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newTag = { label };
-    console.log("Creating tag:", newTag);
+    const tag = { label };
 
     try {
-      const response = await createTag(newTag);
-      console.log("Response from createTag:", response);
-      if (response && response.id) {
-        navigate('/tags');
+      if (tagId) {
+        await updateTag({ id: tagId, ...tag });
       } else {
-        console.error('Failed to create tag');
+        await createTag(tag);
       }
+      navigate('/tags');
     } catch (error) {
       console.error('Error:', error);
     }
@@ -27,7 +33,7 @@ export const TagForm = () => {
 
   return (
     <div className="container">
-      <h2 className="title is-2 has-text-weight-bold">Create Tag</h2>
+      <h2 className="title is-2 has-text-weight-bold">{tagId ? 'Edit Tag' : 'Create Tag'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Tag Name</label>
@@ -44,7 +50,7 @@ export const TagForm = () => {
         <div className="field">
           <div className="control">
             <button className="button is-primary" type="submit">
-              Save Tag
+              {tagId ? 'Update Tag' : 'Save Tag'}
             </button>
           </div>
         </div>
@@ -52,4 +58,3 @@ export const TagForm = () => {
     </div>
   );
 };
-

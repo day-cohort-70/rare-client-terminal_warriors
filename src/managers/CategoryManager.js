@@ -1,4 +1,5 @@
 
+//CategoryManager.js
 export const listCategories = () => {
     return fetch('http://localhost:8000/categories')
     .then(response => response.json())

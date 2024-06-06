@@ -1,3 +1,4 @@
+//CreateCategory.js
 import { useState } from "react"
 import { createCategory, listCategories } from "../../managers/CategoryManager.js"
 
