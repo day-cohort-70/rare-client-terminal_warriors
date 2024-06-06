@@ -27,7 +27,7 @@ export const ApplicationViews = ({ token, setToken }) => {
         </Route>
         <Route path="/allposts" element={<AllPosts />} />
         <Route path="/post">
-          <Route path=":id" element={<PostDetails/>}/>
+          <Route path=":postId" element={<PostDetails/>}/>
         </Route>
         <Route path="/myposts" element={<MyPosts token={token} />} />
       </Route>
