@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllMyPosts } from "../../managers/PostsMangager"
+import { Link } from "react-router-dom"
 
 export const MyPosts = ({token}) => {
     const [posts, setPosts] = useState([])
