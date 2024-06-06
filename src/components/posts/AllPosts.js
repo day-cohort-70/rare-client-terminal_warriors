@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllPostsforAuthor } from "../../managers/PostsMangager"
+import { Link } from "react-router-dom"
 
 export const AllPosts = () => {
     const [posts, setPosts] = useState([])
@@ -25,7 +26,7 @@ export const AllPosts = () => {
                     <div className="cell">Tags</div>
                     {posts.map(postObj => {
                         return (<>
-                        <div className="cell">{postObj.title}</div>
+                        <div className="cell"><Link to={`/post/${postObj.id}`}>{postObj.title}</Link></div>
                         <div className="cell">{postObj.author}</div>
                         <div className="cell">{postObj.publication_date}</div>
                         <div className="cell">{postObj.category_name}</div>
