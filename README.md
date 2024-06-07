@@ -1,14 +1,8 @@
+
+
+-----------
 # Rare: The Publishing Platform for the Discerning Writer
 
-## Getting Started
-1. Install dependencies: `npm install`
-2. Run the code `npm start`
-<!-- TODO: Update the remaining steps if anything changes -->
-3. With the server also running, check that the login, register, and logout functionality is in working.
-4.  This template is using [Bulma](https://bulma.io/documentation) for styling. Take a little bit of time to familiarize yourself with the framework if you would like to continue using it.
-
-
-Project Name: Frontend
 
 **Description**: This is a React.js project that focuses on building user interfaces with reusable components. It utilizes the Context API to manage state and provides routing functionality for navigating between pages.
 
@@ -21,7 +15,7 @@ Project Name: Frontend
 
 ## Installation
 
-1. Clone the repository using the command `git [clone repository-url](https://github.com/day-cohort-70/rare-client-terminal_warriors)`.
+1. Clone the repository using the command `git clone https://github.com/day-cohort-70/rare-client-terminal_warriors`.
 2. Install the project dependencies by running `npm install` in the root directory of the cloned repository.
 3. If you're using this project as a starting point, create a `.env` file in the root directory and set the value for `REACT_APP_ENV`. For example, `export REACT_APP_ENV=development`.
 4. Start the development server by running `npm start`.
@@ -47,4 +41,8 @@ Project Name: Frontend
 
 ## License
 
-This project is licensed under the MIT [License](https://opensource.org/licenses/MIT).
+  This project is licensed under the MIT [License](https://opensource.org/licenses/MIT).
+
+
+
+
