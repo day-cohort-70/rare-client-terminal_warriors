@@ -20,7 +20,6 @@ Brief description of the project and its purpose.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 
 ## Installation
 
