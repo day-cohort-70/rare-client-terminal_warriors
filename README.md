@@ -1,6 +1,6 @@
 # Rare: The Publishing Platform for the Discerning Writer
 
-# Rare: The Publishing Platform for the Discerning Writer
+
 
 ## Getting Started
 1. Install dependencies: `npm install`
