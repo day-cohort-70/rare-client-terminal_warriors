@@ -32,11 +32,10 @@
 ## Contributing
 
 1. Ensure that you have cloned the repository and created a local copy of the project.
-2. Make sure to read and understand the [Code of Conduct](https://github.com/username/repo/blob/master/CODE_OF_CONDUCT.md).
-3. Choose an issue or feature request from the `issues` section in this repository, then work on it according to your skills and interests.
-4. Create a new branch for your changes using `git checkout -b feature/your-feature-name`.
-5. Make your changes and commit them by running `git add <file>` followed by `git commit -m "Your commit message"`.
-6. Push the changes to the remote repository with `git push origin feature/your-feature-name`.
+2. Choose an issue or feature request from the `issues` section in this repository, then work on it according to your skills and interests.
+3. Create a new branch for your changes using `git checkout -b feature/your-feature-name`.
+4. Make your changes and commit them by running `git add <file>` followed by `git commit -m "Your commit message"`.
+5. Push the changes to the remote repository with `git push origin feature/your-feature-name`.
 7. Create a pull request on GitHub, describing the changes you made and explaining why they are valuable.
 
 ## License
