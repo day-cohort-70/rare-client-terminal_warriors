@@ -28,3 +28,7 @@ export const createPost = (post) => {
             return response.json();
         });
 };
+export const getPostDetails = (id) => {
+    return fetch(`http://localhost:8000/posts/${id}`).then((res)=>
+        res.json())
+}

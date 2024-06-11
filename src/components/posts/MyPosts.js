@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllMyPosts } from "../../managers/PostsMangager"
+import { getAllMyPosts } from "../../managers/PostsManager"
 import { Link } from "react-router-dom"
 
 export const MyPosts = ({token}) => {

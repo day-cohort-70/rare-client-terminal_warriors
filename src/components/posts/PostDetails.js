@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getPostDetails } from "../../managers/PostsMangager"
+import { getPostDetails } from "../../managers/PostsManager"
 
 export const PostDetails = () => {
     const {postId} = useParams()
