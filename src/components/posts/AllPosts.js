@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
+<<<<<<< HEAD
 import { getAllPostsforAuthor } from "../../managers/PostsMangager"
 import { Link } from "react-router-dom"
+=======
+import { getAllPostsforAuthor } from "../../managers/PostsManager"
+>>>>>>> f70b8779a3f599adc84098f2e02badf57a7fbdef
 
 export const AllPosts = () => {
     const [posts, setPosts] = useState([])
