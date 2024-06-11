@@ -10,9 +10,9 @@ import { CategoryList } from '../components/categories/CategoryList.js';
 import { EditCategory } from "../components/categories/EditCategory.js"
 import { MyPosts } from "../components/posts/MyPosts.js"
 import { PostDetails } from "../components/posts/PostDetails.js"
+import { CreatePosts } from '../components/posts/CreatePosts'; // Import CreatePosts component
 
 export const ApplicationViews = ({ token, setToken }) => {
-
   return (
     <Routes>
       <Route path="/login" element={<Login setToken={setToken} />} />
@@ -30,6 +30,7 @@ export const ApplicationViews = ({ token, setToken }) => {
           <Route path=":postId" element={<PostDetails/>}/>
         </Route>
         <Route path="/myposts" element={<MyPosts token={token} />} />
+        <Route path="/posts/create" element={<CreatePosts />} /> {/* New route for CreatePosts */}
       </Route>
     </Routes>
   );
